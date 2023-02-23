@@ -10,7 +10,10 @@ import javax.persistence.PreUpdate;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -31,6 +34,7 @@ public class Travel {
     @Size(min = 1, message = "must include vendor")
     private String vendor;
 
+    @NotNull(message = "amount cannot be empty")
     private Double amount;
 
     @NotBlank

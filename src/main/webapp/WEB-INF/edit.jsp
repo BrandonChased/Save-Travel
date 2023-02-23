@@ -24,27 +24,27 @@
             <h1>Edit Expense</h1>
             <a href="/">Go Back</a>
         </nav>
-        <form:form action="/edit/${travels.id}" method="post" modelAttribute="travel">
+        <form:form action="/edit/${travel.id}" method="post" modelAttribute="travel">
             <input type="hidden" name="_method" value="put"/>
             <div class="form-group mb-3">
                 <form:label path="expense" for="expense">Expense Name </form:label>
-                <form:errors path="expense"/>
                 <form:input type="text" class="form-control" path="expense" id="expense" name="expense"/>
+                <form:errors path="expense" class="text-danger"/>
             </div>
             <div class="form-group mb-3">
                 <form:label path="vendor" for="vendor">Vendor: </form:label>
-                <form:errors path="vendor"/>
                 <form:input type="text" class="form-control" path="vendor" id="vendor" name="vendor"/>
+                <form:errors path="vendor" class="text-danger"/>
             </div>
             <div class="form-group mb-3">
                 <form:label path="amount" for="amount">Amount: </form:label>
-                
                 <form:input type="number" class="form-control" path="amount" id="amount" name="amount"/>
+                <form:errors path="amount" class="text-danger"/>
             </div>
             <div class="form-group mb-3">
                 <form:label path="description" for="description">Description: </form:label>
-                <form:errors path="description"/>
                 <form:textarea type="text" class="form-control" path="description" id="description" name="description"></form:textarea>
+                <form:errors path="description" class="text-danger"/>
             </div>
             <button class="btn btn-primary">Submit</button>
         </form:form>
